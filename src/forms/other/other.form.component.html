@@ -1,0 +1,65 @@
+<!-- Displays more styles of inputs available in Material Design -->
+<form [formGroup]="Form" (ngSubmit)="Submit()">
+  <mat-card>
+    <h1>Fun Input Options</h1>
+    <mat-card-content [style.fontSize.px]="Form.value.fontSize">
+      <p>
+        <!-- Radio button to float labels -->
+        <mat-label>Float Labels: </mat-label>
+        <mat-radio-group formControlName="float">
+          <mat-radio-button value="auto">Auto</mat-radio-button>
+          <mat-radio-button value="always">Always</mat-radio-button>
+        </mat-radio-group>
+      </p>
+
+      <p>
+        <!-- Changes the color of inputs -->
+        <mat-form-field [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
+          <mat-label>Input Color: </mat-label>
+          <mat-select formControlName="fontColor">
+            <mat-option value="primary">Primary</mat-option>
+            <mat-option value="accent">Accent</mat-option>
+            <mat-option value="warning">Warning</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- Changes the font size -->
+        <mat-form-field [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
+          <mat-label>Font Size: </mat-label>
+          <input matInput formControlName="fontSize" type="number" placeholder="Ex. 14" min="8" max="32" />
+          <span matSuffix>px</span>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <!-- Input with max length hint -->
+        <mat-form-field hintLabel="Max 10 characters" appearance="outline" [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
+          <mat-label>Enter some input</mat-label>
+          <input #input matInput formControlName="maxInput" type="text" maxlength="10" placeholder="Ex. Nougat">
+          <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+        </mat-form-field>
+
+        <!-- Mat Selector -->
+        <mat-form-field appearance="outline" [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
+          <mat-label>Select me</mat-label>
+          <mat-select>
+            <mat-option value="one">One</mat-option>
+            <mat-option value="two">Two</mat-option>
+            <mat-option value="three">Three</mat-option>
+          </mat-select>
+          <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+        </mat-form-field>
+
+        <!--Color Picker-->
+        <mat-form-field hintLabel="" appearnace="outline" [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
+          <mat-label>Pick a Color:</mat-label>
+          <input matInput formControlName="colorPicker" type="color" />
+          <mat-hint></mat-hint>
+        </mat-form-field>
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button [disabled]="!Form.valid" mat-raised-button type="submit" color="primary">SUBMIT</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

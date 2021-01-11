@@ -1,0 +1,47 @@
+<form [formGroup]='Form' (ngSubmit)="Submit()">
+  <mat-card>
+    <h1>Create User</h1>
+    <mat-card-content>
+      <mat-form-field hintLabel="Enter your first name." appearance="fill">
+        <mat-label>firstname</mat-label>
+        <input [(ngModel)]="Form.value.firstname" matInput placeholder="Your Firstname." type="text" formControlName="firstname" required>
+        <button mat-button *ngIf="Form.value.firstname" matSuffix mat-icon-button aria-label="Clear" (click)="Form.value.firstname = ''">
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="Form.controls.firstname.hasError('required')">First Name Required.</mat-error>
+      </mat-form-field>
+      <mat-form-field hintLabel="Enter your last name." appearance="fill">
+        <mat-label>lastname</mat-label>
+        <input [(ngModel)]="Form.value.lastname" matInput placeholder="Your Lastname." type="text" formControlName="lastname" required>
+        <button mat-button *ngIf="Form.value.lastname" matSuffix mat-icon-button aria-label="Clear" (click)="Form.value.lastname = ''">
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="Form.controls.lastname.hasError('required')">Last Name Required.</mat-error>
+      </mat-form-field>
+      <mat-form-field hintLabel="Enter your email." appearance="fill">
+        <mat-label>Email</mat-label>
+        <input [(ngModel)]="Form.value.email" matInput placeholder="Your email." type="text" formControlName="email" required>
+        <button mat-button *ngIf="Form.value.email" matSuffix mat-icon-button aria-label="Clear" (click)="Form.value.email = ''">
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="Form.controls.email.hasError('required')">Email Required.</mat-error>
+        <mat-error *ngIf="!Form.controls.email.hasError('required') && Form.controls.email.hasError('email')">Enter Valid Email.</mat-error>
+      </mat-form-field>
+      <mat-form-field hintLabel="Enter a strong password." appearance="fill">
+        <mat-label>password</mat-label>
+        <input [(ngModel)]="Form.value.password" matInput placeholder="A password for your user." type="password" [type]="hide ? 'password' : 'text' " formControlName="password" required>
+        <button mat-button matSuffix mat-icon-button aria-label="Hide password" [attr.aria-pressed]="hide" (click)="hide = !hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <button mat-button *ngIf="Form.value.password" matSuffix mat-icon-button aria-label="Clear" (click)="Form.value.password = ''">
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="Form.controls.password.hasError('required')">Password Required.</mat-error>
+        <mat-error *ngIf="!Form.controls.password.hasError('required') && Form.controls.password.hasError('pattern')">Must contain upper case, lower case, and a number.</mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button [disabled]="!Form.valid" mat-raised-button type="submit" color="primary">SUBMIT</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

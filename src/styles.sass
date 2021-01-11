@@ -1,0 +1,101 @@
+@import 'assets/_variables.sass'
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css'
+// @import 'assets/theme.sass' ### Download angular material sheets with _theming.css
+
+// ### Default Styles ###
+// Removes page margin and adds font styles to the page
+body
+  font-family: Roboto, Arial, sans-serif
+  margin: 0
+
+// Removes default ancher styles
+a, a:hover
+  text-decoration: none
+  color: inherit
+
+// Removes default list styles
+ul, ol
+  list-style: none
+  padding: 0
+  margin: 0
+
+// ### Helfpul Classes ###
+// Used for area around the main content
+.body-spacing
+  margin: 30px
+
+// Used for display flex div spacing
+.spacer
+  flex: 1 1 auto
+
+// ### Layout Styles ###
+// Header
+mat-toolbar.mat-primary
+  height: $header-height
+  position: fixed
+  z-index: 2
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)
+  font-family: "Roboto Mono", monospace
+
+  > *
+    height: $header-height
+    line-height: $header-height
+    align-content: center
+
+  .search, .verified-user
+    margin: 1.0rem
+
+  .brand
+    margin-left: 0.5rem
+    display: flex
+    flex-direction: row
+    align-items: center
+
+  a.indicator
+    border-bottom: 4px solid white
+
+  img
+    padding-right: 1rem
+
+// Page Title
+
+// Side Nav
+mat-sidenav.mat-drawer
+  position: fixed
+  top: $header-height
+  left: 0
+  bottom: 0
+  width: $nav-width
+  box-shadow: 0 16px 38px -12px rgba(0,0,0,.56), 0 4px 25px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2)
+
+  li > a.indicator
+    background-color: rgba(1, 1, 1, 0.1)
+    color: darkslateblue
+
+// Side Nav Content
+mat-sidenav-content
+  margin-top: $header-height
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  padding: .5rem
+
+
+// All items contained in a pages main view
+.body-spacing > ng-component > *
+
+
+// ### Form Styles ###
+// If there are multiple inputs in a row, add space between them
+mat-form-field
+  margin-right: 0.5rem
+
+// Space the Radio Buttons
+mat-radio-button
+  margin: 0 0.5rem
+
+// Sets mat-icon-buttons inline inside of the input fields.
+.mat-form-field-suffix > button.mat-icon-button
+  display: inline-block!important

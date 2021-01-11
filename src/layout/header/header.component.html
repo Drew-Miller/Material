@@ -1,0 +1,16 @@
+<mat-toolbar color="primary" role="header">
+  <button mat-button mat-icon-button aria-label="Toggle Navigation" (click)="ModelChange(!model)">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a class="brand" routerLink="/">
+    <img src="/assets/material_light.svg" height="32" /><span>MATERIAL DESIGN</span>
+  </a>
+  <span class="spacer"></span>
+  <a mat-button routerLink="/home" routerLinkActive="indicator"><mat-icon>home</mat-icon></a>
+  <a mat-button routerLink="/tab" routerLinkActive="indicator"><mat-icon>tab</mat-icon></a>
+  <a mat-button routerLink="/message" routerLinkActive="indicator"><mat-icon>message</mat-icon></a>
+  <button class="search" mat-button aria-label="Search Icon">
+    <mat-icon>search</mat-icon>
+  </button>
+  <mat-icon class="verified-user" aria-hidden="false" aria-label="User verified icon">verified_user</mat-icon>
+</mat-toolbar>

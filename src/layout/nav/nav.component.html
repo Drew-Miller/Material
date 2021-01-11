@@ -1,0 +1,22 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" [opened]="model">
+    <ul>
+      <li>
+        <a mat-button routerLink="/home" routerLinkActive="indicator"><mat-icon>home</mat-icon>Home</a>
+        <mat-divider></mat-divider>
+      </li>
+      <li>
+        <a mat-button routerLink="/tab" routerLinkActive="indicator"><mat-icon>tab</mat-icon>Tabs</a>
+        <mat-divider></mat-divider>
+      </li>
+      <li>
+        <a mat-button routerLink="/message" routerLinkActive="indicator"><mat-icon>message</mat-icon>Forms</a>
+        <mat-divider></mat-divider>
+      </li>
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

@@ -1,0 +1,18 @@
+<form [formGroup]='Form' (ngSubmit)="Submit()">
+  <mat-card>
+    <h1>Create Snackbar Message</h1>
+    <mat-card-content>
+      <mat-form-field hintLabel="Enter a message to display." appearance="standard">
+        <mat-label>snackbar message</mat-label>
+        <input [(ngModel)]="Form.value.message" matInput placeholder="Ex. Hello!" type="text" formControlName="message" required>
+        <button mat-button *ngIf="Form.value.message" matSuffix mat-icon-button aria-label="Clear" (click)="Form.value.message = ''">
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="Form.controls.message.invalid">Message is required.</mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button [disabled]="!Form.valid" mat-raised-button type="submit" color="primary">SUBMIT</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
