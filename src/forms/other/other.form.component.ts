@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, of } from 'rxjs';
+import { PasswordValidator } from 'validators/validators.bundle';
 import { FormBaseComponent } from '../base/form.base.component';
 
 @Component({
@@ -21,7 +22,12 @@ export class OtherFormComponent extends FormBaseComponent<any> {
       fontSize: [14, [Validators.min(8), Validators.max(32)]],
       maxInput: ['', [Validators.maxLength(10)]],
       selectMe: ['one', null],
-      colorPicker: ['#673ab7', null]
+      colorPicker: ['#673ab7', null],
+      dateTimeLocal: [new Date(), null],
+      week: [new Date(), null],
+      time: [new Date(), null],
+      tel: [null, [Validators.pattern(PasswordValidator.strongRegExp)]],
+      url: ['', null]
     });
   }
 

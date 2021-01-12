@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, of } from 'rxjs';
 import { User } from 'core/models.bundle';
-import { FormBaseComponent } from '../base/form.base.component';
 import { PasswordValidator } from 'validators/validators.bundle';
+import { FormBaseComponent } from '../base/form.base.component';
 
 @Component({
   selector: `user-form`,

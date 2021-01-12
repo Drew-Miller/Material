@@ -49,13 +49,42 @@
           </mat-select>
           <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
         </mat-form-field>
+      </p>
 
-        <!--Color Picker-->
+      <p>
+        <!-- Color Picker -->
         <mat-form-field hintLabel="" appearnace="outline" [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
           <mat-label>Pick a Color:</mat-label>
           <input matInput formControlName="colorPicker" type="color" />
           <mat-hint></mat-hint>
         </mat-form-field>
+      </p>
+
+      <p>
+        <!-- Time Inputs -->
+        <mat-form-field hintLabel="" appearance="outline" [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
+          <mat-label>Pick a Date and Time</mat-label>
+          <input matInput formControlName="dateTimeLocal" type="datetime-local" />
+        </mat-form-field>
+        <mat-form-field hintLabel="" appearance="outline" [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
+          <mat-label>Select a Week</mat-label>
+          <input matInput formControlName="week" type="week" />
+        </mat-form-field>
+        <mat-form-field hintLabel="" appearance="outline" [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
+          <mat-label>Select a Time</mat-label>
+          <input matInput formControlName="time" type="time" />
+        </mat-form-field>
+      </p>
+      <p>
+        <!-- Url Input -->
+        <mat-form-field hintLabel="" appearance="outline" [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
+          <mat-label>Pick a Url</mat-label>
+          <input matInput formControlName="url" type="url" />
+        </mat-form-field>
+      </p>
+      <p>
+        <!-- Custom Input -->
+        <telephone-input (modelChange)="Form.value.tel = $event" matLabel="Telephone" hintLabel="Enter your Phone #" placeHolder="+1 (555) 555-5555" appearance="outline"></telephone-input>
       </p>
     </mat-card-content>
     <mat-card-actions>
