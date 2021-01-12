@@ -1,0 +1,9 @@
+<mat-form-field [appearance]="appearance ? appearance : 'outline'" [hintLabel]="hintLabel">
+  <mat-label>{{ matLabel }}</mat-label>
+  <input [(ngModel)]="model" matInput type="tel"
+    [placeholder]="placeHolder"
+    (keydown)="KeyDown($event)"
+    (keyup)="KeyUp($event)"
+    (focus)="SetCursor($event)"
+    (click)="SetCursor($event)" />
+</mat-form-field>
