@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { MaterialModule } from 'core/material.module';
 import { SharedModule } from 'core/shared.module';
+import { NgFormsModule } from 'core/ng.forms.module';
 
 import { TelephoneInputComponent } from './telephone/telephone.input.component';
 
@@ -9,6 +10,7 @@ import { TelephoneInputComponent } from './telephone/telephone.input.component';
   imports: [
     SharedModule,
     MaterialModule,
+    NgFormsModule
   ],
   declarations: [
     TelephoneInputComponent

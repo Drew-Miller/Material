@@ -84,7 +84,9 @@
       </p>
       <p>
         <!-- Custom Input -->
-        <telephone-input (modelChange)="Form.value.tel = $event" matLabel="Telephone" hintLabel="Enter your Phone #" placeHolder="+1 (555) 555-5555" appearance="outline"></telephone-input>
+        <telephone-input (modelChange)="Form.value.tel = $event" [formControl]="Form.controls.tel"
+            matLabel="Phone Number" hintLabel="Enter your Phone #" placeHolder="+1 (555) 555-5555" appearance="outline">
+        </telephone-input>
       </p>
     </mat-card-content>
     <mat-card-actions>

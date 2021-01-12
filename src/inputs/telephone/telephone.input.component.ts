@@ -9,9 +9,9 @@ import { FormFieldBase } from '../base/form-field.base';
   outputs: FormFieldBase.Outputs
 })
 export class TelephoneInputComponent extends FormFieldBase<string> implements OnInit {
-  public pressedKeys: { [key: string]: boolean } = {};
   public mask = '+1 (___) ___-____';
   public numbers: number[] = [];
+  public pressedKeys: { [key: string]: boolean } = {};
 
   public ngOnInit() {
     this.model = this.mask;
@@ -26,7 +26,6 @@ export class TelephoneInputComponent extends FormFieldBase<string> implements On
     }
     this.pressedKeys[key] = true;
 
-    // If the value is a number value
     const n = Number(key);
     if (!Number.isNaN(n) && this.numbers.length < 10) {
       this.numbers.push(n);

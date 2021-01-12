@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, of } from 'rxjs';
-import { PasswordValidator } from 'validators/validators.bundle';
+import { PhoneValidator } from 'validators/validators.bundle';
 import { FormBaseComponent } from '../base/form.base.component';
 
 @Component({
@@ -11,7 +10,7 @@ import { FormBaseComponent } from '../base/form.base.component';
   styleUrls: [`other.form.component.sass`]
 })
 export class OtherFormComponent extends FormBaseComponent<any> {
-  public constructor(fb: FormBuilder, private snackBar: MatSnackBar) {
+  public constructor(fb: FormBuilder) {
     super(fb);
   }
 
@@ -26,7 +25,7 @@ export class OtherFormComponent extends FormBaseComponent<any> {
       dateTimeLocal: [new Date(), null],
       week: [new Date(), null],
       time: [new Date(), null],
-      tel: [null, [Validators.pattern(PasswordValidator.strongRegExp)]],
+      tel: [null, [Validators.pattern(PhoneValidator.strongRegExp)]],
       url: ['', null]
     });
   }
