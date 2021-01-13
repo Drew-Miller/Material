@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 
-import { MaterialModule } from 'core/material.module';
 import { SharedModule } from 'core/shared.module';
 import { NgFormsModule } from 'core/ng.forms.module';
 
-import { TelephoneInputComponent } from './telephone/telephone.input.component';
+import { TelephoneDirective } from './telephone/telephone.directive';
 
 @NgModule({
   imports: [
     SharedModule,
-    MaterialModule,
     NgFormsModule
   ],
   declarations: [
-    TelephoneInputComponent
+    TelephoneDirective
   ],
   exports: [
-    TelephoneInputComponent
+    TelephoneDirective
   ]
 })
-export class InputsModule { }
+export class DirectiveModule { }

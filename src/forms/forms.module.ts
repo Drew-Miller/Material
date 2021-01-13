@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'core/material.module';
 import { SharedModule } from 'core/shared.module';
 import { NgFormsModule } from 'core/ng.forms.module';
-import { InputsModule } from 'inputs/inputs.module';
+import { DirectiveModule } from 'directive/directive.module';
 
 import {
   OtherFormComponent,
@@ -17,7 +17,7 @@ import {
     MaterialModule,
     SharedModule,
     NgFormsModule,
-    InputsModule,
+    DirectiveModule,
     FormsModule,
     ReactiveFormsModule
   ],

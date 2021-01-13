@@ -13,7 +13,6 @@
       </p>
 
       <p>
-        <!-- Changes the color of inputs -->
         <mat-form-field [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
           <mat-label>Input Color: </mat-label>
           <mat-select formControlName="fontColor">
@@ -23,7 +22,6 @@
           </mat-select>
         </mat-form-field>
 
-        <!-- Changes the font size -->
         <mat-form-field [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
           <mat-label>Font Size: </mat-label>
           <input matInput formControlName="fontSize" type="number" placeholder="Ex. 14" min="8" max="32" />
@@ -32,14 +30,12 @@
       </p>
 
       <p>
-        <!-- Input with max length hint -->
         <mat-form-field hintLabel="Max 10 characters" appearance="outline" [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
           <mat-label>Enter some input</mat-label>
           <input #input matInput formControlName="maxInput" type="text" maxlength="10" placeholder="Ex. Nougat">
           <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
         </mat-form-field>
 
-        <!-- Mat Selector -->
         <mat-form-field appearance="outline" [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
           <mat-label>Select me</mat-label>
           <mat-select>
@@ -52,7 +48,6 @@
       </p>
 
       <p>
-        <!-- Color Picker -->
         <mat-form-field hintLabel="" appearnace="outline" [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
           <mat-label>Pick a Color:</mat-label>
           <input matInput formControlName="colorPicker" type="color" />
@@ -61,7 +56,6 @@
       </p>
 
       <p>
-        <!-- Time Inputs -->
         <mat-form-field hintLabel="" appearance="outline" [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
           <mat-label>Pick a Date and Time</mat-label>
           <input matInput formControlName="dateTimeLocal" type="datetime-local" />
@@ -75,19 +69,19 @@
           <input matInput formControlName="time" type="time" />
         </mat-form-field>
       </p>
+
       <p>
-        <!-- Url Input -->
         <mat-form-field hintLabel="" appearance="outline" [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
           <mat-label>Pick a Url</mat-label>
           <input matInput formControlName="url" type="url" />
         </mat-form-field>
       </p>
       <p>
-        <!-- Custom Input -->
-        <telephone-input (modelChange)="Form.value.tel.setValue($event)" [formControl]="Form.controls.tel"
-            matLabel="Phone Number" hintLabel="Enter your Phone #" placeHolder="+1 (555) 555-5555" appearance="outline">
-            <mat-error *ngIf="!Form.controls.tel.valid">Error</mat-error>
-        </telephone-input>
+        <mat-form-field appearance="outline" hintLabel="Enter your Phone #">
+          <mat-label>Phone Number</mat-label>
+          <input matInput formControlName="tel" type="tel" telephone [(ngModel)]="Form.value.tel" [(model)]="Form.value.tel" placeholder="+1 (555) 555-5555" />
+          <mat-error *ngIf="!Form.controls.tel.valid">Error</mat-error>
+        </mat-form-field>
       </p>
     </mat-card-content>
     <mat-card-actions>

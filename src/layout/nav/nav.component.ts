@@ -1,11 +1,11 @@
-import {Component, Input, Output} from '@angular/core';
-import {ModelBaseComponent} from 'core/base.bundle';
+import { Component } from '@angular/core';
+import { ModelBase } from 'core/base.bundle';
 
 @Component({
   selector: 'nav',
   templateUrl: 'nav.component.html',
   styleUrls: ['./nav.component.sass'],
-  inputs: ModelBaseComponent.Inputs,
-  outputs: ModelBaseComponent.Outputs
+  inputs: ModelBase.Inputs,
+  outputs: ModelBase.Outputs
 })
-export class NavComponent extends ModelBaseComponent<boolean> { }
+export class NavComponent extends ModelBase<boolean> { }

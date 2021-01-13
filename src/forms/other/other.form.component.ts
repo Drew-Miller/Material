@@ -25,7 +25,7 @@ export class OtherFormComponent extends FormBaseComponent<any> {
       dateTimeLocal: [new Date(), null],
       week: [new Date(), null],
       time: [new Date(), null],
-      tel: [null, [Validators.pattern(PhoneValidator.strongRegExp)]],
+      tel: ['+1 (___) ___-____', [Validators.pattern(PhoneValidator.strongRegExp)]],
       url: ['', null]
     });
   }

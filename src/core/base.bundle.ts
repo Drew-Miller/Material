@@ -1,1 +1,1 @@
-export * from './base/model.base.component';
+export * from './base/model.base';

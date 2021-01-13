@@ -1,6 +1,6 @@
 import {EventEmitter, Input, Output, SimpleChanges, OnChanges} from '@angular/core';
 
-export abstract class ModelBaseComponent<T> implements OnChanges {
+export abstract class ModelBase<T> implements OnChanges {
   public static Inputs = ['model'];
   public static Outputs = ['modelChange'];
 
@@ -21,7 +21,7 @@ export abstract class ModelBaseComponent<T> implements OnChanges {
    */
   public ngOnChanges(changes: SimpleChanges) {
     for (const propName in changes) {
-      if (ModelBaseComponent.Inputs.indexOf(propName) > -1) {
+      if (ModelBase.Inputs.indexOf(propName) > -1) {
         const val = changes[propName].currentValue as T;
         this.model = val;
       }
