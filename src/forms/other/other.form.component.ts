@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable, of } from 'rxjs';
+import { TelephoneDirective } from 'directive/directive.bundle';
 import { PhoneValidator } from 'validators/validators.bundle';
 import { FormBaseComponent } from '../base/form.base.component';
 
@@ -25,7 +26,7 @@ export class OtherFormComponent extends FormBaseComponent<any> {
       dateTimeLocal: [new Date(), null],
       week: [new Date(), null],
       time: [new Date(), null],
-      tel: ['+1 (___) ___-____', [Validators.pattern(PhoneValidator.strongRegExp)]],
+      tel: [TelephoneDirective.mask, [Validators.pattern(PhoneValidator.strongRegExp)]],
       url: ['', null]
     });
   }

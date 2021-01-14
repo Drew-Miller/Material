@@ -13,7 +13,7 @@ import { ModelBase } from 'core/base.bundle';
   outputs: ModelBase.Outputs
 })
 export class TelephoneDirective extends ModelBase<string> {
-  public mask = '+1 (___) ___-____';
+  public static mask = '+1 (___) ___-____';
   public numbers: number[] = [];
   public pressedKeys: { [key: string]: boolean } = {};
 
@@ -34,7 +34,7 @@ export class TelephoneDirective extends ModelBase<string> {
       v = v.slice(0, index) + key + v.slice(index + 1);
     } else if (key === 'Backspace' && this.numbers.length > 0) {
       this.numbers.pop();
-      const index = this.mask.split('_', this.numbers.length + 1).join('_').length;
+      const index = TelephoneDirective.mask.split('_', this.numbers.length + 1).join('_').length;
       v = v.slice(0, index) + '_' + v.slice(index + 1);
     }
 
