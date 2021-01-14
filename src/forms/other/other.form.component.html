@@ -1,10 +1,10 @@
 <!-- Displays more styles of inputs available in Material Design -->
 <form [formGroup]="Form" (ngSubmit)="Submit()">
   <mat-card>
-    <h1>Fun Input Options</h1>
+    <h1>Other Inputs</h1>
     <mat-card-content [style.fontSize.px]="Form.value.fontSize">
+      <h2>Style Input Options</h2>
       <p>
-        <!-- Radio button to float labels -->
         <mat-label>Float Labels: </mat-label>
         <mat-radio-group formControlName="float">
           <mat-radio-button value="auto">Auto</mat-radio-button>
@@ -29,6 +29,7 @@
         </mat-form-field>
       </p>
 
+      <h2>Label change, Select, and Color Picker</h2>
       <p>
         <mat-form-field hintLabel="Max 10 characters" appearance="outline" [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
           <mat-label>Enter some input</mat-label>
@@ -55,6 +56,7 @@
         </mat-form-field>
       </p>
 
+      <h2>Date/Time Input</h2>
       <p>
         <mat-form-field hintLabel="" appearance="outline" [floatLabel]="Form.value.float" [color]="Form.value.fontColor">
           <mat-label>Pick a Date and Time</mat-label>
@@ -76,6 +78,8 @@
           <input matInput formControlName="url" type="url" />
         </mat-form-field>
       </p>
+
+      <h2>Custom TEL Directive Input w/ Mask</h2>
       <p>
         <mat-form-field appearance="outline" hintLabel="Enter your Phone #">
           <mat-label>Phone Number</mat-label>
