@@ -1,22 +1,19 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { Subject } from 'rxjs';
 import { SearchResult } from 'core/models.bundle';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: `search`,
   templateUrl: `./search.component.html`,
   styleUrls: [`./search.component.sass`]
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
   @Input() results: SearchResult[];
   @Output() query = new Subject<string>();
   @Output() searchSubmit = new Subject<SearchResult>();
   public show = false;
-  public search = 'Hello World!';
-
-  public ngOnInit() {
-    this.query.next(this.search);
-  }
+  public search = '';
 
   public OnSubmit(v: SearchResult = null): void {
     // the result is selected from the queried results.
