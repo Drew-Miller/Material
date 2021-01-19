@@ -1,0 +1,62 @@
+$height: 36px
+
+.search-container
+  position: relative
+  width: 100%
+  display: flex
+  position: relative
+  height: $height
+
+
+input
+  box-sizing: border-box
+  display: block
+  height: 100%
+  width: 100%
+  margin: 0
+  border: 0
+  padding: 0 2.5rem
+  border-radius: 4px
+  font-size: 0.9rem
+
+mat-icon
+  position: absolute
+  top: calc(50% + -12px)
+  margin: 0 0.5rem
+
+.search
+  left: 0
+
+.clear
+  right: 0
+  cursor: pointer
+
+.search-results
+  background: white
+  position: absolute
+  top: calc(#{$height} - 3px)
+  left: 0px
+  right: 0px
+  z-index: -1
+  padding: 0 0 7px
+  border-bottom-left-radius: 10px
+  border-bottom-right-radius: 10px
+  box-shadow: 0px 0px 10px 0px black
+
+  > div
+    position: relative
+    height: 3.1rem
+    line-height: 3.1rem
+    background: white
+    color: black
+    padding: 0 2.6rem
+    font-size: 14.4px
+    font-family: arial
+
+    &:hover
+      background: lightgray
+
+  mat-icon
+    position: absolute
+    right: 1px
+    cursor: pointer
