@@ -7,7 +7,6 @@ import { AppFormsModule } from 'forms/forms.module';
 
 import { MainComponent } from './main/main.component';
 import { HeaderComponent } from './header/header.component';
-import { SearchComponent } from './search/search.component';
 import { NavComponent } from './nav/nav.component';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { NavComponent } from './nav/nav.component';
   declarations: [
     MainComponent,
     HeaderComponent,
-    SearchComponent,
     NavComponent
   ],
   exports: [

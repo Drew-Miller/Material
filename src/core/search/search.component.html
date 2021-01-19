@@ -1,0 +1,15 @@
+<div class="search-container" #searchComponent (focusout)="show = false">
+  <!-- Input Search Bar -->
+  <mat-icon class="search" color="primary">search</mat-icon>
+  <input #input [ngModel]='search' (ngModelChange)="Query($event)"
+    (focus)="show = true" (keyup.enter)="OnSubmit()" (keyup.escape)="show = false; input.blur();"
+    type="text" placeholder="Search" name="search" />
+  <mat-icon class="clear" *ngIf="search" (click)="search = ''" color="primary">close</mat-icon>
+
+  <!-- Search Results -->
+  <div class="search-results" *ngIf="show && search && results && results.length > 0">
+    <div *ngFor="let result of results; let i = index" (mousedown)="OnSubmit(result);">
+      {{ result.text }}<mat-icon (mousedown)="Remove(i); $event.preventDefault();">close</mat-icon>
+    </div>
+  </div>
+</div>

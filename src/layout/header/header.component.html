@@ -6,7 +6,7 @@
     <img src="/assets/material_light.svg" height="32" /><span>MATERIAL DESIGN</span>
   </a>
   <div class="search-container spacer">
-    <search class="spacer"></search>
+    <search class="spacer" (query)="UpdateResults($event)" [results]="results"></search>
   </div>
   <a mat-button routerLink="/home" routerLinkActive="indicator"><mat-icon>home</mat-icon></a>
   <a mat-button routerLink="/tab" routerLinkActive="indicator"><mat-icon>tab</mat-icon></a>

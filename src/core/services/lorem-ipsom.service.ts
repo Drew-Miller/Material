@@ -1,14 +1,23 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Injectable()
 export class LoremIpsomService {
   public static Index = 0;
+  private chunks: string[] = [];
+  private len = 0;
 
-  public static Get(words: number): string {
-    const chunks = loremIpsomData.split(/[\w]+/);
-    const length = chunks.length;
+  public Get(words: number): Observable<string[]> {
+    if (!this.chunks || this.chunks && this.chunks.length === 0) {
+      let data: string = Object.assign(loremIpsomData, '');
+      data = data.replace(/[^A-Za-z0-9\s]/, '');
+      this.chunks = data.split(/[\s]+/).slice(1, -1);
+      this.len = this.chunks.length;
+    }
+
     const index = LoremIpsomService.Index;
-
+    const length = this.len;
+    const chunks = Object.assign([], this.chunks);
     let ret = [];
     if (index + words > length) {
         ret = chunks.slice(index, -1);
@@ -18,7 +27,7 @@ export class LoremIpsomService {
     }
 
     LoremIpsomService.Index = (index + words) % length;
-    return ret.join(' ');
+    return of(ret);
   }
 }
 
