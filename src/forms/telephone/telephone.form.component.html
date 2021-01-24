@@ -1,0 +1,20 @@
+<mat-card class="card-m">
+    <mat-card-header>
+      <mat-icon mat-card-avatar>phone</mat-icon>
+      <mat-card-title>TEL Directive Input w/ Mask</mat-card-title>
+      <mat-card-subtitle>A masked input to help user input.</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        <mat-form-field appearance="outline" hintLabel="Enter your Phone #">
+          <mat-label>Phone Number</mat-label>
+          <input matInput type="tel"
+              [formControl]="tel"
+              telephone
+              [(ngModel)]="value" [(model)]="value"
+              placeholder="+1 (555) 555-5555" />
+          <mat-error *ngIf="!tel.valid">Error</mat-error>
+        </mat-form-field>
+        </p>
+    </mat-card-content>
+</mat-card>

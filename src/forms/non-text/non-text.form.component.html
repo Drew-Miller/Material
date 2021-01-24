@@ -1,0 +1,36 @@
+
+<mat-card class="card-m">
+    <mat-card-header>
+        <mat-icon mat-card-avatar>settings_input_svideo</mat-icon>
+        <mat-card-title>Non-Text Inputs</mat-card-title>
+        <mat-card-subtitle>Input w/ updating hint, Select, and Color Picker.</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+        <mat-form-field hintLabel="Max 10 characters" appearance="outline">
+            <mat-label>Enter some input</mat-label>
+            <input #max_input matInput [formControl]="maxInput" type="text" maxlength="10" placeholder="Ex. Nougat">
+            <mat-hint align="end">{{max_input.value?.length || 0}}/10</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Select me</mat-label>
+            <mat-select>
+            <mat-option value="one">One</mat-option>
+            <mat-option value="two">Two</mat-option>
+            <mat-option value="three">Three</mat-option>
+            </mat-select>
+            <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+        </mat-form-field>
+        </p>
+
+        <p>
+        <mat-form-field hintLabel="" appearnace="outline">
+            <mat-label>Pick a Color:</mat-label>
+            <input matInput [formControl]="colorPicker" type="color" />
+            <mat-hint></mat-hint>
+        </mat-form-field>
+        </p>
+    </mat-card-content>
+</mat-card>
+  

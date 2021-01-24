@@ -1,0 +1,25 @@
+
+<mat-card class="card-m">
+    <mat-card-header>
+      <mat-icon mat-card-avatar>date_range</mat-icon>
+      <mat-card-title>Date/Time Input</mat-card-title>
+      <mat-card-subtitle>Inputs dealing with time selection.</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        <mat-form-field hintLabel="" appearance="outline">
+          <mat-label>Pick a Date and Time</mat-label>
+          <input matInput [formControl]="dateTimeLocal" type="datetime-local" />
+        </mat-form-field>
+        <mat-form-field hintLabel="" appearance="outline">
+          <mat-label>Select a Week</mat-label>
+          <input matInput [formControl]="week" type="week" />
+        </mat-form-field>
+        <mat-form-field hintLabel="" appearance="outline">
+          <mat-label>Select a Time</mat-label>
+          <input matInput [formControl]="time" type="time" />
+        </mat-form-field>
+      </p>
+    </mat-card-content>
+</mat-card>
+  
