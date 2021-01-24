@@ -7,7 +7,7 @@ import { NgFormsModule } from 'core/ng.forms.module';
 import { DirectiveModule } from 'directive/directive.module';
 
 import {
-  OtherFormComponent,
+  StyleFormComponent,
   SnackBarFormComponent,
   UserFormComponent
 } from './forms.bundle';
@@ -24,12 +24,12 @@ import {
   declarations: [
     SnackBarFormComponent,
     UserFormComponent,
-    OtherFormComponent
+    StyleFormComponent
   ],
   exports: [
     SnackBarFormComponent,
     UserFormComponent,
-    OtherFormComponent
+    StyleFormComponent
   ]
 })
 export class AppFormsModule { }

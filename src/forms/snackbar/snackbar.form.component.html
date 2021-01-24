@@ -1,6 +1,10 @@
 <form [formGroup]='Form' (ngSubmit)="Submit()">
-  <mat-card>
-    <h1>Create Snackbar Message</h1>
+  <mat-card class="card-m">
+    <mat-card-header>
+      <mat-icon mat-card-avatar>call_to_action</mat-icon>
+      <mat-card-title>Create Snackbar Message</mat-card-title>
+      <mat-card-subtitle>Emits a message from the snackbar.</mat-card-subtitle>
+    </mat-card-header>
     <mat-card-content>
       <mat-form-field hintLabel="Enter a message to display." appearance="standard">
         <mat-label>snackbar message</mat-label>
@@ -16,3 +20,4 @@
     </mat-card-actions>
   </mat-card>
 </form>
+

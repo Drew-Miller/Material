@@ -1,6 +1,6 @@
 @import 'src/assets/_variables.sass'
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css'
-// @import 'assets/theme.sass' ### Download angular material sheets with _theming.css
+// @import 'assets/theme.sass' ### Create angular material sheets with _theming.css
 
 // ### Default Styles ###
 // Removes page margin and adds font styles to the page
@@ -31,6 +31,19 @@ button
 .spacer
   flex: 1 1 auto
 
+.m-auto
+  margin: auto
+
+/// ### Card Styles ###
+mat-card.card-m
+  max-width: 28rem
+
+mat-icon.mat-card-avatar
+  font-size: 48px
+  position: relative
+  left: -4px
+  top: -4px
+
 // ### Layout Styles ###
 // Header
 mat-toolbar.mat-primary
@@ -40,7 +53,7 @@ mat-toolbar.mat-primary
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)
   font-family: "Roboto Mono", monospace
 
-  > *
+  > a, > div
     height: $header-height
     line-height: $header-height
 
@@ -97,6 +110,9 @@ input.mat-input-element
 
 mat-form-field
   margin-right: 1.0rem
+
+mat-form-field.wide
+  width: 100%
 
 // Space the Radio Buttons
 mat-radio-button

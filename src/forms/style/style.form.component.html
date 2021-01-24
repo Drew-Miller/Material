@@ -1,0 +1,131 @@
+<!-- Displays more styles of inputs available in Material Design -->
+<mat-card class="card-m">
+  <mat-card-header>
+    <mat-icon mat-card-avatar>input</mat-icon>
+    <mat-card-title>Style Input Options</mat-card-title>
+    <mat-card-subtitle>Updates styles on the form.</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content [style.fontSize.px]="fontSize.value">
+    <p>
+      <mat-label>Float Labels: </mat-label>
+      <mat-radio-group [formControl]="float">
+        <mat-radio-button value="auto">Auto</mat-radio-button>
+        <mat-radio-button value="always">Always</mat-radio-button>
+      </mat-radio-group>
+    </p>
+
+    <p>
+      <mat-form-field [floatLabel]="float.value" [color]="fontColor.value">
+        <mat-label>Input Color: </mat-label>
+        <mat-select [formControl]="fontColor">
+          <mat-option value="primary">Primary</mat-option>
+          <mat-option value="accent">Accent</mat-option>
+          <mat-option value="warning">Warning</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field [floatLabel]="float.value" [color]="fontColor.value">
+        <mat-label>Font Size: </mat-label>
+        <input matInput [formControl]="fontSize" type="number" placeholder="Ex. 14" min="8" max="32" />
+        <span matSuffix>px</span>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline" [floatLabel]="float.value" [color]="fontColor.value">
+        <mat-label>Try Floating this Label!</mat-label>
+        <mat-select>
+        </mat-select>
+      </mat-form-field>
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="card-m">
+  <mat-card-header>
+    <mat-icon mat-card-avatar>settings_input_svideo</mat-icon>
+    <mat-card-title>Non-Text Inputs</mat-card-title>
+    <mat-card-subtitle>Input w/ updating hint, Select, and Color Picker.</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      <mat-form-field hintLabel="Max 10 characters" appearance="outline">
+        <mat-label>Enter some input</mat-label>
+        <input #max_input matInput [formControl]="maxInput" type="text" maxlength="10" placeholder="Ex. Nougat">
+        <mat-hint align="end">{{max_input.value?.length || 0}}/10</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Select me</mat-label>
+        <mat-select>
+          <mat-option value="one">One</mat-option>
+          <mat-option value="two">Two</mat-option>
+          <mat-option value="three">Three</mat-option>
+        </mat-select>
+        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field hintLabel="" appearnace="outline">
+        <mat-label>Pick a Color:</mat-label>
+        <input matInput [formControl]="colorPicker" type="color" />
+        <mat-hint></mat-hint>
+      </mat-form-field>
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="card-m">
+  <mat-card-header>
+    <mat-icon mat-card-avatar>date_range</mat-icon>
+    <mat-card-title>Date/Time Input</mat-card-title>
+    <mat-card-subtitle>Inputs dealing with time selection.</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      <mat-form-field hintLabel="" appearance="outline">
+        <mat-label>Pick a Date and Time</mat-label>
+        <input matInput [formControl]="dateTimeLocal" type="datetime-local" />
+      </mat-form-field>
+      <mat-form-field hintLabel="" appearance="outline">
+        <mat-label>Select a Week</mat-label>
+        <input matInput [formControl]="week" type="week" />
+      </mat-form-field>
+      <mat-form-field hintLabel="" appearance="outline">
+        <mat-label>Select a Time</mat-label>
+        <input matInput [formControl]="time" type="time" />
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field hintLabel="" appearance="outline">
+        <mat-label>Pick a Url</mat-label>
+        <input matInput [formControl]="url" type="url" />
+      </mat-form-field>
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<!--
+<mat-card class="card-m">
+  <mat-card-header>
+    <mat-icon mat-card-avatar>phone</mat-icon>
+    <mat-card-title>TEL Directive Input w/ Mask</mat-card-title>
+    <mat-card-subtitle>A masked input to help user input.</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      <mat-form-field appearance="outline" hintLabel="Enter your Phone #">
+        <mat-label>Phone Number</mat-label>
+        <input matInput type="tel"
+            [formControl]="tel"
+            telephone
+            [(ngModel)]="tel.value" [(model)]="tel.value"
+            placeholder="+1 (555) 555-5555" />
+        <mat-error *ngIf="!tel.valid">Error</mat-error>
+      </mat-form-field>
+    </p>
+  </mat-card-content>
+</mat-card>
+-->
+

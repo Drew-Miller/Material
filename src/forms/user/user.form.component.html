@@ -1,6 +1,10 @@
 <form [formGroup]='Form' (ngSubmit)="Submit()">
-  <mat-card>
-    <h1>Create User</h1>
+  <mat-card class="card-m">
+    <mat-card-header>
+      <mat-icon mat-card-avatar>face</mat-icon>
+      <mat-card-title>Create User</mat-card-title>
+      <mat-card-subtitle>Create's an application user.</mat-card-subtitle>
+    </mat-card-header>
     <mat-card-content>
       <mat-form-field hintLabel="Enter your first name." appearance="fill">
         <mat-label>firstname</mat-label>
@@ -18,7 +22,7 @@
         </button>
         <mat-error *ngIf="Form.controls.lastname.hasError('required')">Last Name Required.</mat-error>
       </mat-form-field>
-      <mat-form-field hintLabel="Enter your email." appearance="fill">
+      <mat-form-field class="wide" hintLabel="Enter your email." appearance="fill">
         <mat-label>Email</mat-label>
         <input [(ngModel)]="Form.value.email" matInput placeholder="Your email." type="text" formControlName="email" required>
         <button mat-button *ngIf="Form.value.email" matSuffix mat-icon-button aria-label="Clear" (click)="Form.value.email = ''">
@@ -27,7 +31,7 @@
         <mat-error *ngIf="Form.controls.email.hasError('required')">Email Required.</mat-error>
         <mat-error *ngIf="!Form.controls.email.hasError('required') && Form.controls.email.hasError('email')">Enter Valid Email.</mat-error>
       </mat-form-field>
-      <mat-form-field hintLabel="Enter a strong password." appearance="fill">
+      <mat-form-field class="wide" hintLabel="Enter a strong password." appearance="fill">
         <mat-label>password</mat-label>
         <input [(ngModel)]="Form.value.password" matInput placeholder="A password for your user." type="password" [type]="hide ? 'password' : 'text' " formControlName="password" required>
         <button mat-button matSuffix mat-icon-button aria-label="Hide password" [attr.aria-pressed]="hide" (click)="hide = !hide">
