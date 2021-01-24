@@ -6,8 +6,9 @@ import { CoreModule } from 'core/core.module';
 import { AppFormsModule } from 'forms/forms.module';
 
 import { MainComponent } from './main/main.component';
-import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
+import { HeaderComponent } from './header/header.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
 
 @NgModule({
   imports: [
@@ -18,8 +19,9 @@ import { NavComponent } from './nav/nav.component';
   ],
   declarations: [
     MainComponent,
+    NavComponent,
     HeaderComponent,
-    NavComponent
+    SideNavComponent
   ],
   exports: [
     MainComponent

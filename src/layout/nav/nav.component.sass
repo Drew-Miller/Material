@@ -1,10 +1,12 @@
-li > *
-  width: 100%
-  text-align: left
+@import 'src/assets/_variables.sass'
 
-a
-  height: 48px
-  line-height: 48px
+$search-margin: 3rem
 
-mat-icon
-  margin-right: 0.5rem
+.search-container
+  display: flex
+  flex-direction: row
+  align-items: center
+
+search
+  margin-left: calc(#{$search-margin} + 16px)
+  margin-right: $search-margin

@@ -1,22 +1,15 @@
-<mat-sidenav-container>
-  <mat-sidenav mode="side" [opened]="model">
-    <ul>
-      <li>
-        <a mat-button routerLink="/home" routerLinkActive="indicator"><mat-icon>home</mat-icon>Home</a>
-        <mat-divider></mat-divider>
-      </li>
-      <li>
-        <a mat-button routerLink="/tab" routerLinkActive="indicator"><mat-icon>tab</mat-icon>Tabs</a>
-        <mat-divider></mat-divider>
-      </li>
-      <li>
-        <a mat-button routerLink="/message" routerLinkActive="indicator"><mat-icon>message</mat-icon>Forms</a>
-        <mat-divider></mat-divider>
-      </li>
-    </ul>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <ng-content></ng-content>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-
+<mat-toolbar color="primary" role="header">
+  <button mat-button mat-icon-button aria-label="Toggle Navigation" (click)="ModelChange(!model)">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a class="brand" routerLink="/">
+    <img src="/assets/material_light.svg" height="32" /><span>MATERIAL DESIGN</span>
+  </a>
+  <div class="search-container spacer">
+    <search class="spacer" (query)="UpdateResults($event)" [results]="results"></search>
+  </div>
+  <a mat-button routerLink="/home" routerLinkActive="indicator"><mat-icon>home</mat-icon></a>
+  <a mat-button routerLink="/tab" routerLinkActive="indicator"><mat-icon>tab</mat-icon></a>
+  <a mat-button routerLink="/message" routerLinkActive="indicator"><mat-icon>message</mat-icon></a>
+  <mat-icon class="verified-user" aria-hidden="false" aria-label="User verified icon">verified_user</mat-icon>
+</mat-toolbar>

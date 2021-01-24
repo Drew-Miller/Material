@@ -1,4 +1,5 @@
-<header [(model)]="ShowNav"></header>
-<nav [(model)]="ShowNav">
+<app-nav [(model)]="ShowNav"></app-nav>
+<app-header></app-header>
+<side-nav [(model)]="ShowNav">
   <ng-content></ng-content>
-</nav>
+</side-nav>
