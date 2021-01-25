@@ -48,8 +48,7 @@ mat-icon.mat-card-avatar
 // Header
 mat-toolbar.mat-primary
   height: $header-height
-  position: fixed
-  z-index: 3
+  z-index: 2
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)
   font-family: "Roboto Mono", monospace
 
@@ -72,7 +71,10 @@ mat-toolbar.mat-primary
   img
     padding-right: 1rem
 
-// Page Title
+// Layout Body
+#layout-body
+  height: calc(100vh - #{$header-height})
+  overflow: auto
 
 // Side Nav
 mat-sidenav.mat-drawer
@@ -89,22 +91,15 @@ mat-sidenav.mat-drawer
 
 // Side Nav Content
 mat-sidenav-content
-  margin-top: calc(#{$header-height} * 2)
-  position: absolute
-  top: 0
-  bottom: 0
-  left: 0
-  right: 0
   padding: .5rem
 
 // Header Content
 app-header
-  position: absolute
-  top: $header-height
+  display: block
   height: $header-height
-  z-index: 2
   width: 100%
   padding: 1rem
+  box-sizing: border-box
 
 // All items contained in a pages main view
 .body-spacing > ng-component > *
