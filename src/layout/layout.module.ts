@@ -9,6 +9,8 @@ import { MainComponent } from './main/main.component';
 import { NavComponent } from './nav/nav.component';
 import { HeaderComponent } from './header/header.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { ThemePickerComponent } from './theme-picker/theme-picker.component';
+import { OverlayContainer, FullscreenOverlayContainer } from '@angular/cdk/overlay';
 
 @NgModule({
   imports: [
@@ -21,10 +23,14 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     MainComponent,
     NavComponent,
     HeaderComponent,
-    SideNavComponent
+    SideNavComponent,
+    ThemePickerComponent
   ],
   exports: [
     MainComponent
+  ],
+  providers: [
+    {provide: OverlayContainer, useClass: FullscreenOverlayContainer}
   ]
 })
 export class LayoutModule {}

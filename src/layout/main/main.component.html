@@ -1,7 +1,5 @@
 <app-nav [(model)]="ShowNav"></app-nav>
-<div id="layout-body">
+<side-nav [(model)]="ShowNav">
   <app-header></app-header>
-  <side-nav [(model)]="ShowNav">
-    <ng-content></ng-content>
-  </side-nav>
-</div>
+  <ng-content></ng-content>
+</side-nav>

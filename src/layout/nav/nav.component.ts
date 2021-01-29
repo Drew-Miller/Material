@@ -17,7 +17,7 @@ export class NavComponent extends ModelBase<boolean> {
     super();
   }
 
-  public UpdateResults(v: string): void {
+  public SearchResultUpdate(v: string): void {
     let i = 0;
     this.loremService.Get(v.length).subscribe({
       next: (x: string[]) => this.results = x.map(y => new SearchResult(i++, null, y))

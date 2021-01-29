@@ -1,0 +1,62 @@
+@import '_theme.sass'
+
+.dark-color
+  color: $d-primary
+
+// Default Theme Styles
+#body.light-theme
+  @include angular-material-theme($light-theme)
+
+  #app-nav
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)
+
+    search mat-icon
+      color: $l-secondary
+
+    a mat-icon, .verified-user
+      color: $l-secondary-accent
+
+    a.indicator
+      border-bottom: 4px solid $l-secondary-accent
+
+  a.indicator
+    background-color: rgba(1, 1, 1, 0.1)!important
+
+  app-header h1
+    background-color: $l-primary
+    color: $l-primary-contrast
+
+  mat-sidenav.mat-drawer
+    box-shadow: 0 16px 38px -12px rgba(0,0,0,.56), 0 4px 25px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2)
+
+// Dark Theme Styles
+#body.dark-theme
+  @include angular-material-theme($dark-theme)
+
+  #app-nav, app-header h1
+    background-color: mat-color($dark-gray, 900)
+    color: mat-contrast($dark-gray, 900)
+
+  #sidenav-container
+
+  #sidenav-nav
+    background-color: rgba(255, 255, 255, .05)
+    border: none
+
+  #sidenav-content
+
+  #app-nav
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.5)
+
+    a mat-icon, search mat-icon, .verified-user
+      color: $d-secondary
+
+    a.indicator
+      border-bottom: 4px solid $d-secondary
+
+  mat-tab-group, mat-sidenav, mat-list
+    background-color: rgba(255, 255, 255, .05)
+
+    mat-tab-group, mat-sidenav, mat-list
+      background-color: rgba(255, 255, 255, 0.02)!important
+

@@ -1,0 +1,39 @@
+<mat-card>
+  <mat-card-content class="card-table">
+    <section>
+      <div class="table-label"><code>text mat-badge</code></div>
+      <div class="table-row">
+        <p><span matBadge="1">Normal</span></p>
+        <p><span matBadge="2" matBadgeSize="large">Size</span></p>
+        <p><span matBadge="3" matBadgeOverlap="false">No Overlap</span></p>
+        <p><span matBadge="4" matBadgePosition="before" matBadgeColor="accent">Position</span></p>
+        <p><span matBadge="5" color="primary" matBadgeColor="accent">Color</span></p>
+        <p><span matBadge="6" [matBadgeHidden]="textHidden" (click)="textHidden = !textHidden">Hide</span></p>
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+      <div class="table-label"><code>button mat-badge</code></div>
+      <div class="table-row">
+        <p><button mat-raised-button matBadge="1">Normal</button></p>
+        <p><button mat-raised-button matBadge="2" matBadgeSize="large">Size</button></p>
+        <p><button mat-raised-button matBadge="3" matBadgeOverlap="false">No Overlap</button></p>
+        <p><button mat-raised-button matBadge="4" matBadgePosition="before">Position</button></p>
+        <p><button mat-raised-button matBadge="5" color="primary" matBadgeColor="accent">Color</button></p>
+        <p><button mat-raised-button matBadge="6" [matBadgeHidden]="buttonHidden" (click)="buttonHidden = !buttonHidden">Hide</button></p>
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+      <div class="table-label"><code>icon mat-badge</code></div>
+      <div class="table-row">
+        <p><mat-icon matBadge="1">home</mat-icon></p>
+        <p><mat-icon matBadge="2" matBadgeSize="large">home</mat-icon></p>
+        <p><mat-icon matBadge="3" matBadgeOverlap="false">home</mat-icon></p>
+        <p><mat-icon matBadge="4" matBadgePosition="before" matBadgeColor="accent">home</mat-icon></p>
+        <p><mat-icon matBadge="5" color="primary" matBadgeColor="accent">home</mat-icon></p>
+        <p><mat-icon matBadge="6" [matBadgeHidden]="iconHidden" (click)="iconHidden = !iconHidden">home</mat-icon></p>
+      </div>
+    </section>
+  </mat-card-content>
+</mat-card>

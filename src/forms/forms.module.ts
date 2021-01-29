@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'core/material.module';
 import { SharedModule } from 'core/shared.module';
 import { NgFormsModule } from 'core/ng.forms.module';
-import { DirectiveModule } from 'directive/directive.module';
+import { DirectivesModule } from 'directives/directives.module';
 
 import {
   SnackBarFormComponent,
@@ -20,7 +20,7 @@ import {
     MaterialModule,
     SharedModule,
     NgFormsModule,
-    DirectiveModule,
+    DirectivesModule,
     FormsModule,
     ReactiveFormsModule
   ],

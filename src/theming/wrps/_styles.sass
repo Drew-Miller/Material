@@ -1,0 +1,98 @@
+@import '_definitions.sass'
+@import '_variables.sass'
+
+.robot-font
+  font-family: "Roboto Mono", monospace
+
+/// ### Card Styles ###
+mat-icon.mat-card-avatar
+  font-size: 48px
+  position: relative
+  left: -4px
+  top: -4px
+
+mat-card-content.card-table
+  section
+    display: table
+
+  .table-label
+    display: table-cell
+    min-width: 160px
+    margin-left: 8px
+
+  .table-row
+    display: table-cell
+    width: 100%
+
+  p
+    min-width: 100px
+    display: inline-block
+    text-align: center
+    margin: 8px 16px
+
+// ### Form Styles ###
+input.mat-input-element
+
+mat-form-field
+  margin-right: 1.0rem
+
+mat-form-field.wide
+  width: 100%
+
+// Space the Radio Buttons
+mat-radio-button
+  margin: 0 0.5rem
+
+// Sets mat-icon-buttons inline inside of the input fields.
+.mat-form-field-suffix > button.mat-icon-button
+  display: inline-block!important
+
+// ### Tab Styles ###
+.mat-tab-label-content mat-icon
+  margin: 0 0.3rem
+
+// ### Layout Styles ###
+// Nav
+#app-nav
+  height: $header-height
+  position: fixed
+  z-index: 2
+
+  > a, > div
+    height: $header-height
+    line-height: $header-height
+
+  .verified-user
+    margin: 0.0rem 1.0rem
+
+  .brand
+    margin-left: 0.5rem
+    display: flex
+    flex-direction: row
+    align-items: center
+
+  img
+    padding-right: 1rem
+
+// Header Content
+app-header h1
+    margin: 0px!important
+    height: $header-height
+    padding: 1rem
+    box-sizing: border-box
+
+// Side Nav
+#sidenav-nav
+  position: fixed
+  top: $header-height
+  left: 0
+  bottom: 0
+  width: $nav-width
+
+// Side Nav Content
+#sidenav-content
+  margin-top: $header-height
+  min-height: 100vh
+
+// All items contained in a pages main view
+.body-spacing > ng-component > *

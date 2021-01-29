@@ -1,15 +1,17 @@
-<mat-toolbar color="primary" role="header">
-  <button mat-button mat-icon-button aria-label="Toggle Navigation" (click)="ModelChange(!model)">
+<mat-toolbar id="app-nav" color="primary" role="header">
+  <button mat-icon-button mat-icon-button aria-label="Toggle Navigation" (click)="ModelChange(!model)">
     <mat-icon>menu</mat-icon>
   </button>
-  <a class="brand" routerLink="/">
+  <a class="brand robot-font" routerLink="/">
     <img src="/assets/material_light.svg" height="32" /><span>MATERIAL DESIGN</span>
   </a>
   <div class="search-container spacer">
-    <search class="spacer" (query)="UpdateResults($event)" [results]="results"></search>
+    <search class="spacer" (query)="SearchResultUpdate($event)" [results]="results"></search>
   </div>
   <a mat-button routerLink="/home" routerLinkActive="indicator"><mat-icon>home</mat-icon></a>
-  <a mat-button routerLink="/tab" routerLinkActive="indicator"><mat-icon>tab</mat-icon></a>
-  <a mat-button routerLink="/message" routerLinkActive="indicator"><mat-icon>message</mat-icon></a>
+  <a mat-button routerLink="/gallery" routerLinkActive="indicator"><mat-icon>tab</mat-icon></a>
+  <a mat-button routerLink="/forms" routerLinkActive="indicator"><mat-icon>message</mat-icon></a>
+  <a mat-button routerLink="/schematics" routerLinkActive="indicator"><mat-icon>schema</mat-icon></a>
   <mat-icon class="verified-user" aria-hidden="false" aria-label="User verified icon">verified_user</mat-icon>
+  <theme-picker></theme-picker>
 </mat-toolbar>

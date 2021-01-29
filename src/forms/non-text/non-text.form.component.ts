@@ -11,7 +11,7 @@ import { FormBaseComponent } from '../base/form.base.component';
 })
 export class NonTextFormComponent extends FormBaseComponent<any> {
   public maxInput = new FormControl('', [Validators.maxLength(10)]);
-  public colorPicker = new FormControl('#673ab7', null);
+  public colorPicker = new FormControl('black', null);
 
   public constructor(fb: FormBuilder) {
     super(fb);

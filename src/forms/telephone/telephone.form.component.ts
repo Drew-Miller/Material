@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { PhoneValidator } from 'validators/validators.bundle';
-import { TelephoneDirective } from 'directive/directive.bundle';
+import { TelephoneDirective } from 'directives/directives.bundle';
 import { FormBaseComponent } from '../base/form.base.component';
 
 @Component({
